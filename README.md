@@ -1,4 +1,6 @@
-# kickstart.nvim
+# baux.nvim
+
+A chaotic hack of kickstart.nvim, renamed, and probably broken in many many ways.
 
 ## Introduction
 
