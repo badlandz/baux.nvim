@@ -1,26 +1,8 @@
 --[[
 
-=====================================================================
-==================== READ THIS BEFORE CONTINUING ====================
-=====================================================================
-========                                    .-----.          ========
-========         .----------------------.   | === |          ========
-========         |.-""""""""""""""""""-.|   |-----|          ========
-========         ||                    ||   | === |          ========
-========         ||   KICKSTART.NVIM   ||   |-----|          ========
-========         ||                    ||   | === |          ========
-========         ||                    ||   |-----|          ========
-========         ||:Tutor              ||   |:::::|          ========
-========         |'-..................-'|   |____o|          ========
-========         `"")----------------(""`   ___________      ========
-========        /::::::::::|  |::::::::::\  \ no mouse \     ========
-========       /:::========|  |==hjkl==:::\  \ required \    ========
-========      '""""""""""""'  '""""""""""""'  '""""""""""'   ========
-========                                                     ========
-=====================================================================
-=====================================================================
+This is NOT  Kickstart?
 
-What is Kickstart?
+No, it's not, it's my edits of kickstart though, and probably not safe for use.
 
   Kickstart.nvim is *not* a distribution.
 
@@ -91,18 +73,26 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
+-- Set linewrap on so super long lines like this don't scroll off screen for no fucking reason other than to annoy and be obnoixious.
+vim.opt.wrap = true
+
+-- Bulk Import Old Settings:
+vim.opt.linebreak = true
+vim.opt.scrolloff = 8
+-- vim.opt.colorcolumn = 80
+-- vim.opt.nofoldenabled = true
+
 -- Make line numbers default
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
---  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -238,7 +228,7 @@ require('lazy').setup({
   --    require('Comment').setup({})
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  { 'numToStr/Comment.nvim',    opts = {} },
 
   -- Here is a more advanced example where we pass configuration
   -- options to `gitsigns.nvim`. This is equivalent to the following Lua:
@@ -273,7 +263,7 @@ require('lazy').setup({
   -- after the plugin has been loaded:
   --  config = function() ... end
 
-  { -- Useful plugin to show you pending keybinds.
+  {                     -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     config = function() -- This is the function that runs, AFTER loading
@@ -296,6 +286,22 @@ require('lazy').setup({
   -- you do for a plugin at the top level, you can do for a dependency.
   --
   -- Use the `dependencies` key to specify the dependencies of a particular plugin
+--  TODO: The very first thing you should do is to run the command `:Tutor` in Neovim.
+-- -- Plug 'vimwiki/vimwiki'
+-- --   let g:vimwiki_list = [{'path': '~/src/',
+-- --                         \ 'syntax': 'markdown', 'ext': '.md'}]
+-- --   let g:vimwiki_ext2syntax = {'.md':'markdown', '.markdown':'markdown','.mdown':'markdown'}
+-- --   let g:vimwiki_markdown_link_ext = 1
+-- --   let g:vimwiki_folding=''
+-- -- Plug 'tbabej/taskwiki'
+-- --   let g:taskwiki_markup_syntex = 'markdown'
+-- --   let g:taskwiki_disable_concealcursor = 'nc'
+-- --   nmap <C-h> :TaskWikiToggle<CR>
+-- -- Plug 'farseer90718/vim-taskwarrior'
+-- -- Plug 'plasticboy/vim-markdown'
+-- -- Plug 'powerman/vim-plugin-AnsiEsc'
+-- -- Plug 'majutsushi/tagbar'
+
 
   { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
@@ -319,7 +325,7 @@ require('lazy').setup({
       { 'nvim-telescope/telescope-ui-select.nvim' },
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
-      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+      { 'nvim-tree/nvim-web-devicons',            enabled = vim.g.have_nerd_font },
     },
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
