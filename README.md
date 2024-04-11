@@ -1,7 +1,7 @@
 # baux.nvim
 
-A chaotic hack of kickstart.nvim, renamed, and probably broken in many many ways.
-TESTING...
+A chaotic hack of kickstart.nvim, renamed, and probably broken in many many ways. This is in TESTING...
+
 ## Introduction
 
 A starting point for Neovim that is:
